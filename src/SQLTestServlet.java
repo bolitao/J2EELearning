@@ -26,7 +26,9 @@ public class SQLTestServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/myim?serverTimezone=UTC", "bolitao", "bolitao");
+            Connection connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/myim?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8",
+                    "bolitao", "bolitao");
             Statement statement = connection.createStatement();
             String sql;
             sql = "SELECT * FROM contact";

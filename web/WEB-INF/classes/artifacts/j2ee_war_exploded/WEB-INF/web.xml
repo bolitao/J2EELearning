@@ -34,6 +34,14 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>how2jServlet</servlet-name>
+        <servlet-class>how2j.request.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>how2jServlet</servlet-name>
+        <url-pattern>/how2jServlet</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>registerServlet</servlet-name>
@@ -122,5 +130,41 @@
     <servlet-mapping>
         <servlet-name>GetManyServlet</servlet-name>
         <url-pattern>/getManyServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>how2jRegister</servlet-name>
+        <servlet-class>how2j.request.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>how2jRegister</servlet-name>
+        <url-pattern>/how2jRegister</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>how2jHelloServlet</servlet-name>
+        <servlet-class>how2j.request.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>how2jHelloServlet</servlet-name>
+        <url-pattern>/how2jHelloServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>how2jServletResponse</servlet-name>
+        <servlet-class>how2j.response.ServletResponse</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>how2jServletResponse</servlet-name>
+        <url-pattern>/how2jServletResponse</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>photoUpload</servlet-name>
+        <servlet-class>how2j.upload.UploadPhotoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>photoUpload</servlet-name>
+        <url-pattern>/photoUpload</url-pattern>
     </servlet-mapping>
 </web-app>
