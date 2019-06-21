@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * @author 陶波利
+ * TODO: 理解非常重要
  */
 public class UploadPhotoServlet extends HttpServlet {
     @Override
@@ -22,8 +23,8 @@ public class UploadPhotoServlet extends HttpServlet {
         String fileName = null;
         DiskFileItemFactory factory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(factory);
-        // 设置文件上传限制为 10M
-        factory.setSizeThreshold(10 * 1024 * 1024);
+        // 设置文件上传限制为 1M
+        factory.setSizeThreshold(1024 * 1024);
         List items = null;
         try {
             items = upload.parseRequest(req);
@@ -40,12 +41,13 @@ public class UploadPhotoServlet extends HttpServlet {
             FileItem item = (FileItem) iterator.next();
             if (!item.isFormField()) {
                 fileName = System.currentTimeMillis() + ".jpg";
-                //通过getRealPath获取上传文件夹，如果项目在e:/project/j2ee/web,那么就会自动获取到 e:/project/j2ee/web/uploaded
+                //通过 getRealPath 获取上传文件夹，如果项目在 e:/project/j2ee/web,那么就会自动获取到 e:/project/j2ee/web/uploaded
                 String photoFolder = req.getServletContext().getRealPath("upload");
                 File file = new File(photoFolder, fileName);
                 file.getParentFile().mkdirs();
-                // 通过item.getInputStream()获取浏览器上传的文件的输入流
+                // 通过 item.getInputStream() 获取浏览器上传的文件的输入流
                 InputStream inputStream = item.getInputStream();
+                // 读文件
                 FileOutputStream fileOutputStream = new FileOutputStream(file);
                 int length = 0;
                 byte[] b = new byte[1024 * 1024];
