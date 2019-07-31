@@ -41,7 +41,8 @@ public class UploadPhotoServlet extends HttpServlet {
             FileItem item = (FileItem) iterator.next();
             if (!item.isFormField()) {
                 fileName = System.currentTimeMillis() + ".jpg";
-                //通过 getRealPath 获取上传文件夹，如果项目在 e:/project/j2ee/web,那么就会自动获取到 e:/project/j2ee/web/uploaded
+                //通过 getRealPath 获取上传文件夹，如果项目在 e:/project/j2ee/web,那么就会自动获取到
+                // e:/project/j2ee/web/uploaded
                 String photoFolder = req.getServletContext().getRealPath("upload");
                 File file = new File(photoFolder, fileName);
                 file.getParentFile().mkdirs();
