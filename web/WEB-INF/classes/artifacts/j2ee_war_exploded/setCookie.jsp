@@ -14,7 +14,7 @@
 <%
     Cookie cookie = new Cookie("name", "Graeen");
     cookie.setMaxAge(60 * 24 * 60);
-    cookie.setPath("127.0.0.1");
+    cookie.setPath("/");
     response.addCookie(cookie);
 %>
 <a href="getCookie.jsp">跳转到获取 cookie 的页面</a>
