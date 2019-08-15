@@ -12,7 +12,11 @@
     <title>SetOutRemove</title>
 </head>
 <body>
+<<<<<<< HEAD
 <c:set var="name" value="${'gareen'}" scope="session"/>
+=======
+<c:set var="name" value="${'gareen'}" scope="request"/>
+>>>>>>> origin/master
 通过标签获取name: <c:out value="${name}"/>
 <br><c:remove var="name" scope="request"/> <br>
 remove 后通过标签获取name: <c:out value="${name}"/> <br>
